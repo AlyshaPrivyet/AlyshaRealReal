@@ -22,8 +22,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//     [NSThread sleepForTimeInterval:3.0];
-
+    _infos = [[NSMutableArray alloc]init];
+    _connecters = [[NSMutableArray alloc] init];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *telphoneNum = [userDefaults objectForKey:@"PhoneNumber"];

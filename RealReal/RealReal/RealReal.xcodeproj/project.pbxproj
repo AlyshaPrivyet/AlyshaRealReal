@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		788A36781E013D6800946F83 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B5DEA11E0101E000E8E9BB /* libstdc++.tbd */; };
+		78B412DC1E01343300C716EF /* StreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B412DB1E01343300C716EF /* StreamView.m */; };
+		78B412DF1E01369600C716EF /* HorizontalSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B412DE1E01369600C716EF /* HorizontalSegue.m */; };
+		78B412E11E013A2700C716EF /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B412E01E013A2700C716EF /* libstdc++.6.0.9.tbd */; };
 		78B5DE5A1E01005200E8E9BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B5DE591E01005200E8E9BB /* main.m */; };
 		78B5DE5D1E01005200E8E9BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B5DE5C1E01005200E8E9BB /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		78B5DE601E01005200E8E9BB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B5DE5F1E01005200E8E9BB /* ViewController.m */; };
@@ -25,7 +29,6 @@
 		78B5DE9E1E0101CA00E8E9BB /* libsioclient_tls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B5DE9B1E0101CA00E8E9BB /* libsioclient_tls.a */; };
 		78B5DE9F1E0101CA00E8E9BB /* libsioclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B5DE9C1E0101CA00E8E9BB /* libsioclient.a */; };
 		78B5DEA01E0101CA00E8E9BB /* Woogeen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B5DE9D1E0101CA00E8E9BB /* Woogeen.framework */; };
-		78B5DEA21E0101E000E8E9BB /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B5DEA11E0101E000E8E9BB /* libstdc++.tbd */; };
 		78B5DEA41E0101E900E8E9BB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B5DEA31E0101E900E8E9BB /* libsqlite3.0.tbd */; };
 		78B5DEA61E0101F800E8E9BB /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B5DEA51E0101F800E8E9BB /* libicucore.tbd */; };
 		78B5DEE91E01023600E8E9BB /* backlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B5DEA91E01023600E8E9BB /* backlogo.png */; };
@@ -83,6 +86,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		78B412DA1E01343300C716EF /* StreamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamView.h; sourceTree = "<group>"; };
+		78B412DB1E01343300C716EF /* StreamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamView.m; sourceTree = "<group>"; };
+		78B412DD1E01369600C716EF /* HorizontalSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalSegue.h; sourceTree = "<group>"; };
+		78B412DE1E01369600C716EF /* HorizontalSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalSegue.m; sourceTree = "<group>"; };
+		78B412E01E013A2700C716EF /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		78B5DE551E01005200E8E9BB /* RealReal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealReal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B5DE591E01005200E8E9BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		78B5DE5B1E01005200E8E9BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -176,9 +184,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				788A36781E013D6800946F83 /* libstdc++.tbd in Frameworks */,
+				78B412E11E013A2700C716EF /* libstdc++.6.0.9.tbd in Frameworks */,
 				78B5DEA61E0101F800E8E9BB /* libicucore.tbd in Frameworks */,
 				78B5DEA41E0101E900E8E9BB /* libsqlite3.0.tbd in Frameworks */,
-				78B5DEA21E0101E000E8E9BB /* libstdc++.tbd in Frameworks */,
 				78B5DE991E01017000E8E9BB /* Contacts.framework in Frameworks */,
 				78B5DE971E01015800E8E9BB /* VideoToolbox.framework in Frameworks */,
 				78B5DE9F1E0101CA00E8E9BB /* libsioclient.a in Frameworks */,
@@ -281,6 +290,7 @@
 		78B5DE8B1E01012B00E8E9BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78B412E01E013A2700C716EF /* libstdc++.6.0.9.tbd */,
 				78B5DEA51E0101F800E8E9BB /* libicucore.tbd */,
 				78B5DEA31E0101E900E8E9BB /* libsqlite3.0.tbd */,
 				78B5DEA11E0101E000E8E9BB /* libstdc++.tbd */,
@@ -423,6 +433,10 @@
 		78B5DEE31E01023600E8E9BB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				78B412DD1E01369600C716EF /* HorizontalSegue.h */,
+				78B412DE1E01369600C716EF /* HorizontalSegue.m */,
+				78B412DA1E01343300C716EF /* StreamView.h */,
+				78B412DB1E01343300C716EF /* StreamView.m */,
 				78B5DEE41E01023600E8E9BB /* PasswordView.h */,
 				78B5DEE51E01023600E8E9BB /* PasswordView.m */,
 			);
@@ -588,8 +602,10 @@
 				78B5DEF11E01023600E8E9BB /* MBProgressHUD+NJ.m in Sources */,
 				78B5DF091E01023600E8E9BB /* PasswordView.m in Sources */,
 				78B5DEF81E01023600E8E9BB /* ContactsCell.m in Sources */,
+				78B412DF1E01369600C716EF /* HorizontalSegue.m in Sources */,
 				78B5DEF51E01023600E8E9BB /* Tools.m in Sources */,
 				78B5DE601E01005200E8E9BB /* ViewController.m in Sources */,
+				78B412DC1E01343300C716EF /* StreamView.m in Sources */,
 				78B5DF051E01023600E8E9BB /* RecordViewController.m in Sources */,
 				78B5DEFF1E01023600E8E9BB /* FunctionViewController.m in Sources */,
 				78B5DF011E01023600E8E9BB /* MainTabbarViewController.m in Sources */,
@@ -860,6 +876,7 @@
 				78B5DE841E01005200E8E9BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78B5DE851E01005200E8E9BB /* Build configuration list for PBXNativeTarget "RealRealTests" */ = {
 			isa = XCConfigurationList;
@@ -868,6 +885,7 @@
 				78B5DE871E01005200E8E9BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78B5DE881E01005200E8E9BB /* Build configuration list for PBXNativeTarget "RealRealUITests" */ = {
 			isa = XCConfigurationList;
@@ -876,6 +894,7 @@
 				78B5DE8A1E01005200E8E9BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -33,8 +33,9 @@
 
 -(void)setPerson:(Person *)person
 {
+    NSString *phoneStr = [person.phone stringByReplacingOccurrencesOfString:@"-" withString:@""];
     self.PeopleName.text=person.name;
-    self.PeopleNum.text=person.phone;
+    self.PeopleNum.text=phoneStr;
 }
 
 - (void)awakeFromNib {

@@ -59,12 +59,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onNotification:) name:nil object:nil];
     _peerClient=[appDelegate peerClient];
     
-    
-//    _isCaller = NO;
-//    //注册一个观察者
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInvited:) name:@"OnInvited" object:nil];
-//    appDelegate = (id)[[UIApplication sharedApplication]delegate];
-//    _peerClient = appDelegate.peerClient;
 
     [self connectToSDPServer];
 }
