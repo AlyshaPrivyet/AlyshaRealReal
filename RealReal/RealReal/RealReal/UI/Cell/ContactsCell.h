@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Person.h"
 
 @interface ContactsCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *peopleName;
-@property (weak, nonatomic) IBOutlet UILabel *peopleNum;
+
+@property(nonatomic,strong)Person *person;
+
++(instancetype)cellWithTableView:(UITableView*)tableView;
 
 @end

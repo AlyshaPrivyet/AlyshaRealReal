@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FunctionViewController : UIViewController<UITabBarDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface FunctionViewController : UIViewController<UITabBarDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *numberInputer;
 - (IBAction)backBtnClicked:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *contentTable;
 
+@property (weak, nonatomic) IBOutlet UIButton *prepareDieBtn;
 
 @end

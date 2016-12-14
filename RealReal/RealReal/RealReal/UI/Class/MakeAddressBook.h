@@ -14,6 +14,6 @@
 @interface MakeAddressBook : NSObject
 
 @property(nonatomic,strong)PersonGroup *personGroup;
--(void )getAddressBook;
+-(NSMutableArray*)getAddressBook;
 
 @end

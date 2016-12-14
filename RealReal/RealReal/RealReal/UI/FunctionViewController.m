@@ -1,11 +1,3 @@
-//
-//  FunctionViewController.m
-//  RealReal
-//
-//  Created by alysha on 2016/12/10.
-//  Copyright © 2016年 alysha. All rights reserved.
-//
-
 #import "FunctionViewController.h"
 #import "Tools.h"
 #import "MakeAddressBook.h"
@@ -15,23 +7,39 @@
 
 
 @interface FunctionViewController ()
-{
-    NSMutableArray *contentArray;
-}
+
+@property(nonatomic,strong)NSMutableArray *contentArray;
+@property(nonatomic,strong)NSMutableArray *recordPasswordArr;
+
 @end
 
 @implementation FunctionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
     self.navigationController.navigationBar.hidden = YES;
     _numberInputer.keyboardType = UIKeyboardTypePhonePad;
-
+    _numberInputer.delegate = self;
+    _recordPasswordArr = [[NSMutableArray alloc]init];
+    
     _contentTable.delegate = self;
     _contentTable.dataSource = self;
-        [self getAddressBook];
+    
 }
+
+-(NSMutableArray *)contentArray
+{
+    if(_contentArray==nil)
+    {
+        _contentArray=[NSMutableArray array];
+        MakeAddressBook *abMaker = [[MakeAddressBook alloc]init];
+        
+        _contentArray =  [abMaker getAddressBook];
+    }
+    return _contentArray;
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -39,35 +47,73 @@
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectio
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return contentArray.count;
+    return self.contentArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ContactsCell *cell = [[ContactsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ContactsCell"];
-    Person *person = [[Person alloc]init];
-    person = [contentArray objectAtIndex:indexPath.row];
-    cell.peopleNum.text=[NSString stringWithFormat:@"phone:%@",person.phone];
-    cell.peopleName.text = person.name;
+    ContactsCell *cell=[ContactsCell cellWithTableView:tableView];
+    cell.person=self.contentArray[indexPath.row];
+    
     return cell;
 }
+
+
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if(textField.text.length+string.length>11)
+    {return NO;
+    }
+    if(string.length==0)
+    {
+
+        [self.recordPasswordArr removeLastObject];
+        NSString *recordPasswordStr=[[NSString alloc]init];
+        for(int i=0;i<_recordPasswordArr.count;i++)
+            recordPasswordStr=[recordPasswordStr stringByAppendingString:self.recordPasswordArr[i]];
+        NSLog(@"recordPasswordStr:%@",recordPasswordStr);
+        [_prepareDieBtn setTitle:recordPasswordStr forState:UIControlStateNormal];
+
+    }
+    else
+    {
+        [self.recordPasswordArr addObject:string];
+        NSString *recordPasswordStr=[[NSString alloc]init];
+        for(int i=0;i<_recordPasswordArr.count;i++)
+            recordPasswordStr=[recordPasswordStr stringByAppendingString:self.recordPasswordArr[i]];
+        NSLog(@"recordPasswordStr:%@",recordPasswordStr);
+        [_prepareDieBtn setTitle:recordPasswordStr forState:UIControlStateNormal];
+
+    }
+    if(self.recordPasswordArr.count==11)
+    {
+        NSString *recordPasswordStr=[[NSString alloc]init];
+        for(int i=0;i<_recordPasswordArr.count;i++)
+            recordPasswordStr=[recordPasswordStr stringByAppendingString:self.recordPasswordArr[i]];
+        NSLog(@"recordPasswordStr:%@",recordPasswordStr);
+        [_prepareDieBtn setTitle:recordPasswordStr forState:UIControlStateNormal];
+    }
+    
+    
+    return YES;
+}
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    NSLog(@"XXX");
 }
 
--(void)getAddressBook
-{
-    MakeAddressBook *abMaker = [[MakeAddressBook alloc]init];
-    [abMaker getAddressBook];
-//    contentArray = [[NSMutableArray alloc]init];
-//    contentArray = array;
-//    [_contentTable reloadData];
-}
+
+
 
 - (IBAction)backBtnClicked:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
